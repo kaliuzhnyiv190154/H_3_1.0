@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class WeaponManager {
@@ -10,12 +9,13 @@ public class WeaponManager {
     }
 
     public void sortWeaponsByDamage() {
-        weapons.sort(new Comparator<Weapon>() {
-            @Override
-            public int compare(Weapon o1, Weapon o2) {
-                return o2.getDamage() - o1.getDamage();
-            }
-        });
+        weapons.sort((Weapon w1, Weapon w2) -> w2.getDamage() - w1.getDamage());
+    }
+
+    public void sortWeaponsByCombatType_DamageType_Name() {
+        weapons.sort(Comparator.comparing(Weapon::getCombatType)
+                .thenComparing(Weapon::getDamageType)
+                .thenComparing(Weapon::getName));
     }
 
     public void printWeapons() {
@@ -33,5 +33,9 @@ public class WeaponManager {
 
     public void removeWeapon(Weapon weapon) {
         weapons.remove(weapon);
+    }
+
+    public ArrayList<Weapon> getWeapons() {
+        return weapons;
     }
 }

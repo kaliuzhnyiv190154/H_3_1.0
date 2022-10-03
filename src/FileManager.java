@@ -21,6 +21,10 @@ public class FileManager {
         weaponManager.sortWeaponsByDamage();
     }
 
+    public void sortObjectsByCombatType_DamageType_Name(){
+        weaponManager.sortWeaponsByCombatType_DamageType_Name();
+    }
+
     public void readFile() {
         try (Stream<String> stream = Files.lines(Paths.get(file.getPath()))) {
 

@@ -7,5 +7,7 @@ public class Main {
         fileManager.printObjects();
         fileManager.sortObjectsByDamage();
         fileManager.printObjects();
+        fileManager.sortObjectsByCombatType_DamageType_Name();
+        fileManager.printObjects();
     }
 }
