@@ -6,22 +6,26 @@ import java.util.stream.Stream;
 
 public class FileManager {
     private File file;
-    private WeaponManager weaponManager;
+    private final WeaponManager weaponManager;
 
     public FileManager(File file) {
         this.file = file;
         weaponManager = new WeaponManager();
     }
 
-    public void printObjects(){
+    public void printObjectsInterface() {
+        weaponManager.printInterface(weaponManager.getWeapons());
+    }
+
+    public void printObjects() {
         weaponManager.printWeapons();
     }
 
-    public void sortObjectsByDamage(){
+    public void sortObjectsByDamage() {
         weaponManager.sortWeaponsByDamage();
     }
 
-    public void sortObjectsByCombatType_DamageType_Name(){
+    public void sortObjectsByCombatType_DamageType_Name() {
         weaponManager.sortWeaponsByCombatType_DamageType_Name();
     }
 
