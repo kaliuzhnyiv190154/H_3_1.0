@@ -17,6 +17,10 @@ public class FileManager {
         weaponManager.printWeapons();
     }
 
+    public void sortObjectsByDamage(){
+        weaponManager.sortWeaponsByDamage();
+    }
+
     public void readFile() {
         try (Stream<String> stream = Files.lines(Paths.get(file.getPath()))) {
 

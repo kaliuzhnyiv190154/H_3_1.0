@@ -5,5 +5,7 @@ public class Main {
         FileManager fileManager = new FileManager(new File("H_3_1.0/weapons.csv"));
         fileManager.readFile();
         fileManager.printObjects();
+        fileManager.sortObjectsByDamage();
+        fileManager.printObjects();
     }
 }
