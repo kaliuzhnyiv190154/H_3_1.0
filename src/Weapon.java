@@ -14,6 +14,7 @@ public class Weapon {
         this.damageType = damageType;
         this.damage = damage;
         this.speed = speed;
+        this.strength = strength;
         this.value = value;
     }
 
@@ -27,6 +28,11 @@ public class Weapon {
         int weaponStrength = Integer.parseInt(parts[5]);
         int weaponValue = Integer.parseInt(parts[6]);
         return new Weapon(weaponName, weaponCombatType, weaponDamageType, weaponDamage, weaponSpeed, weaponStrength, weaponValue);
+    }
+
+    @Override
+    public String toString(){
+        return name + ": " + " Combat: " + combatType + " Damage Type: " + damageType + " Damage: " + damage + " Speed: " + speed + " Strength: " + strength + " Value: " + value + "pt.";
     }
 
     public String getName() {
