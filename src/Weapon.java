@@ -4,15 +4,29 @@ public class Weapon {
     private DamageType damageType;
     private int damage;
     private int speed;
+
+    private int strength;
     private int value;
 
-    public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int value) {
+    public Weapon(String name, CombatType combatType, DamageType damageType, int damage, int speed, int strength, int value) {
         this.name = name;
         this.combatType = combatType;
         this.damageType = damageType;
         this.damage = damage;
         this.speed = speed;
         this.value = value;
+    }
+
+    public static Weapon deserialize(String line){
+        String[] parts = line.split(";");
+        String weaponName = parts[0];
+        CombatType weaponCombatType = CombatType.valueOf(parts[1]);
+        DamageType weaponDamageType = DamageType.valueOf(parts[2]);
+        int weaponDamage = Integer.parseInt(parts[3]);
+        int weaponSpeed = Integer.parseInt(parts[4]);
+        int weaponStrength = Integer.parseInt(parts[5]);
+        int weaponValue = Integer.parseInt(parts[6]);
+        return new Weapon(weaponName, weaponCombatType, weaponDamageType, weaponDamage, weaponSpeed, weaponStrength, weaponValue);
     }
 
     public String getName() {

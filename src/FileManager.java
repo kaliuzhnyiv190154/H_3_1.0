@@ -12,10 +12,12 @@ public class FileManager {
     }
 
     public void readFile() {
-        try {
-            Stream<String> stream = Files.lines(Paths.get(file.getPath()));
+        try (Stream<String> stream = Files.lines(Paths.get(file.getPath()))) {
+
+            stream.forEach(System.out::println);
+
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 
