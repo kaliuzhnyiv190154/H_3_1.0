@@ -14,5 +14,10 @@ public class Main {
         fileManager.sortObjectsByCombatType_DamageType_Name();
         fileManager.printObjects();
         fileManager.printObjectsInterface();
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
