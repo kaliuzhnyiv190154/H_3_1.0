@@ -17,6 +17,10 @@ public class FileManager {
         weaponManager.printInterface(weaponManager.getWeapons());
     }
 
+    public void printObjectsInterfaceTable(){
+        weaponManager.printInterfaceTable(weaponManager.getWeapons());
+    }
+
     public void printObjects() {
         weaponManager.printWeapons();
     }

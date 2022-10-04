@@ -55,6 +55,10 @@ public class Weapon {
         return speed;
     }
 
+    public int getStrength() {
+        return strength;
+    }
+
     public int getValue() {
         return value;
     }

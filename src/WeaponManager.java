@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Formatter;
 import java.util.List;
 
 public class WeaponManager {
@@ -25,15 +26,21 @@ public class WeaponManager {
         printSeparator();
     }
 
-    public void printInterface(List<Weapon> weapons){
+    public void printInterface(List<Weapon> weapons) {
         System.out.println("Printable Methode!");
         Printable printable = weapons1 -> weapons1.forEach(System.out::println);
         printable.print(weapons);
         printSeparator();
     }
 
+    public void printInterfaceTable(List<Weapon> weapon) {
+        System.out.printf("%25s%20s%20s%20s%20s%20s%20s", "NAME\t \t", "COMBAT\t \t", "DAMAGE TYPE\t \t", "DAMAGE\t \t", "SPEED\t \t", "STRENGTH\t \t", "VALUE\t \t \n");
+        weapon.stream().forEach(w -> System.out.format("%25s%20s%20s%20s%20s%20s%20s", w.getName() + "\t \t+", w.getCombatType() + "\t \t+", w.getDamageType() + "\t \t+", w.getDamage() + "\t \t+", w.getSpeed() + "\t \t+", w.getStrength() + "\t \t+", w.getValue() + "\t \t+ \n"));
+        printSeparator();
+    }
+
     public void printSeparator() {
-        System.out.println("-------------------------------------------------------------------------------------------------------");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     }
 
     public void addWeapon(Weapon weapon) {
